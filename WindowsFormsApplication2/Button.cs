@@ -10,6 +10,13 @@ namespace WindowsFormsApplication2
 {
     class Button : AbstractGuiComponent
     {
+        public Button(int x, int y, int width, int height)
+        {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
         public override void paint(PaintEventArgs e)
         {
             e.Graphics.DrawRectangle(new Pen(Color.Black, 3), x, y, width, height);

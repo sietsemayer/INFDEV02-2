@@ -9,32 +9,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    class WindowsFormsAdaptor : IComponent, IEnumerable
+    class WindowsFormsAdaptor : Control, IEnumerable
     {
-        public ISite Site { get; set; }
-        /*public ISite Site
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-        */
-        public event EventHandler Disposed;
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+        private List<AbstractGuiComponent> components = new List<AbstractGuiComponent>();
 
         public IEnumerator GetEnumerator()
         {
             throw new NotImplementedException();
+        }
+        public void add(AbstractGuiComponent comp)
+        {
+            components.Add(comp);
+        }
+        public void paint(PaintEventArgs e)
+        {
+            foreach (AbstractGuiComponent guiObject in components)
+            {
+                guiObject.paint(e);
+            }
         }
     }
 }

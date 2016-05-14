@@ -17,8 +17,9 @@ namespace WindowsFormsApplication2
             Form form = new Form();
 
             WindowsFormsAdaptor wfa = new WindowsFormsAdaptor();
-            form.Container.Add(wfa);
-            wfa.add(new Button());
+            form.Controls.Add(wfa);
+            wfa.add(new Button(1,1,10,10));
+           // wfa.paint();
 
             DialogResult result = form.ShowDialog();
 
