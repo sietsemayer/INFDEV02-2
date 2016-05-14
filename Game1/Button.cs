@@ -14,7 +14,7 @@ namespace Game1 {
         }
         public override void paint( Game1 parent )
         {
-            Rectangle r = new Rectangle(x, y, width, height);
+            Vector2 location = new Vector2(x, y);
             Texture2D tex = new Texture2D(parent.GraphicsDevice, width, height);
             Color[] data = new Color[width * height];
             for( int pixel = 0 ; pixel < data.Count() ; pixel++ ) {
@@ -23,7 +23,7 @@ namespace Game1 {
             }
             tex.SetData(data);
 
-            parent.spriteBatch.Draw(tex, r, Color.White);
+            parent.spriteBatch.Draw(tex, location, Color.White);
 
         }
 
