@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Game1
 {
@@ -9,8 +10,9 @@ namespace Game1
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public GraphicsDeviceManager graphics { protected set; get; }
+        public SpriteBatch spriteBatch { protected set; get; }
+        List<AbstractGuiComponent> components = new List<AbstractGuiComponent>();
 
         public Game1()
         {
@@ -26,8 +28,7 @@ namespace Game1
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            // TODO: Add your initialization logic here            
             base.Initialize();
         }
 
@@ -39,7 +40,7 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            components.Add(new Button(10, 10, 30, 10));
             // TODO: use this.Content to load your game content here
         }
 
@@ -76,7 +77,12 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            
+            spriteBatch.Begin();
+            foreach(AbstractGuiComponent obj in components ) {
+                obj.paint(this);
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

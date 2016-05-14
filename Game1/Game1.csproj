@@ -38,7 +38,10 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AbstractGuiComponent.cs" />
+    <Compile Include="Button.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="IGUIButton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
