@@ -40,7 +40,9 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            
             components.Add(new Button(10, 10, 30, 10));
+            components.Add(new Label("test", Content.Load<SpriteFont>("Pesca")));
             // TODO: use this.Content to load your game content here
         }
 
