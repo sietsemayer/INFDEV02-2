@@ -72,3 +72,4 @@ C:\Users\Mark\WindowsFormsApplication2\Game1\bin\Windows\x86\Debug\SharpDX.RawIn
 C:\Users\Mark\WindowsFormsApplication2\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\Mark\WindowsFormsApplication2\Game1\obj\x86\Debug\Game1.exe
 C:\Users\Mark\WindowsFormsApplication2\Game1\obj\x86\Debug\Game1.pdb
+C:\Users\William\Source\Repos\INFDEV02-2\Game1\bin\Windows\x86\Debug\Content\Pesca.xnb
