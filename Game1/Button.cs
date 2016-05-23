@@ -9,14 +9,15 @@ namespace Game1 {
         Vector2 location;
         Texture2D tex;
         Color[] data;
-        public Button(int x, int y, int width, int height)
+        AbstractGuiComponent text;
+        public Button(int x, int y, int width, int height, string text, SpriteFont font)
         {
             this.x = x;
             this.y = y;
             this.width = width;
             this.height = height;
              location = new Vector2(x, y);
-
+            this.text = new Label(text, font, x +1, y - height / 2);
             data = new Color[width * height];
             for( int pixel = 0 ; pixel < data.Count() ; pixel++ ) {
                 //the function applies the color according to the specified pixel
@@ -32,7 +33,7 @@ namespace Game1 {
             }
             
             parent.spriteBatch.Draw(tex, location, Color.White);
-
+            this.text.paint(parent);
         }
 
     }

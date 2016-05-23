@@ -12,14 +12,16 @@ namespace Game1 {
         private SpriteFont font;
         public string text { get; set; }
 
-        public Label(string text, SpriteFont font) {
+        public Label(string text, SpriteFont font, int x, int y) {
             this.text = text;
             this.font = font;
+            this.x = x;
+            this.y = y;
 
         }
 
         public override void paint( Game1 parent ) {
-            parent.spriteBatch.DrawString(font, text, new Vector2(100, 100), Color.Black);
+            parent.spriteBatch.DrawString(font, text, new Vector2(x, y), Color.Black);
         }
     }
 }

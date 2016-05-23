@@ -16,6 +16,8 @@ namespace Game1
 
         public Game1()
         {
+
+            
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -41,8 +43,8 @@ namespace Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
-            components.Add(new Button(10, 10, 30, 10));
-            components.Add(new Label("test", Content.Load<SpriteFont>("Pesca")));
+            components.Add(new Button(10, 10, 50, 10, "click me", Content.Load<SpriteFont>("Pesca")));
+            components.Add(new Label("test", Content.Load<SpriteFont>("Pesca"), 10, 40));
             // TODO: use this.Content to load your game content here
         }
 
