@@ -40,8 +40,10 @@
   <ItemGroup>
     <Compile Include="GUI\AbstractGuiComponent.cs" />
     <Compile Include="GUI\Button.cs" />
+    <Compile Include="GUI\GUIContainer.cs" />
     <Compile Include="GUI\IGUIButton.cs" />
     <Compile Include="GUI\Label.cs" />
+    <Compile Include="GUI\PanelFactory.cs" />
     <Compile Include="iGame.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />

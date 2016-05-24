@@ -47,6 +47,7 @@ namespace Game1
             
             components.Add(new Button(10, 10, 100, 25, "click me", Content.Load<SpriteFont>("Pesca")));
             components.Add(new Label("test", Content.Load<SpriteFont>("Pesca"), 10, 60));
+            components.Add(PanelFactory.generatePanel(Content));
             // TODO: use this.Content to load your game content here
         }
 
