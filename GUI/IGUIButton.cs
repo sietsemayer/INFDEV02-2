@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game1 {
+namespace GUI {
     interface IGUIButton
     {
         void addListener(Action listener);

@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Game1;
 
-namespace Game1 {
+
+namespace GUI {
     class Label : AbstractGuiComponent {
 
         private SpriteFont font;
@@ -20,7 +22,7 @@ namespace Game1 {
 
         }
 
-        public override void paint( Game1 parent ) {
+        public override void paint( iGame parent ) {
             parent.spriteBatch.DrawString(font, text, new Vector2(x, y), Color.Black);
         }
     }

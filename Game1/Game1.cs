@@ -2,22 +2,24 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using GUI;
+using System;
 
 namespace Game1
 {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
-    {
+    public class Game1 : Game, iGame {
         public GraphicsDeviceManager graphics { protected set; get; }
         public SpriteBatch spriteBatch { protected set; get; }
+
+        //public GraphicsDevice graphicsDevice { get; }
+
         List<AbstractGuiComponent> components = new List<AbstractGuiComponent>();
 
-        public Game1()
-        {
+        public Game1() {
 
-            
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -43,8 +45,8 @@ namespace Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
-            components.Add(new Button(10, 10, 50, 10, "click me", Content.Load<SpriteFont>("Pesca")));
-            components.Add(new Label("test", Content.Load<SpriteFont>("Pesca"), 10, 40));
+            components.Add(new Button(10, 10, 100, 25, "click me", Content.Load<SpriteFont>("Pesca")));
+            components.Add(new Label("test", Content.Load<SpriteFont>("Pesca"), 10, 60));
             // TODO: use this.Content to load your game content here
         }
 
@@ -78,7 +80,7 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.HotPink);
 
             // TODO: Add your drawing code here
             

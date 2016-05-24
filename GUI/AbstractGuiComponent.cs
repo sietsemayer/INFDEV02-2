@@ -1,8 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Game1;
 
-namespace Game1 {
-    abstract class AbstractGuiComponent
+namespace GUI {
+    public abstract class AbstractGuiComponent
     {
         public int x { get; set; }
         public int y { get; set; }
@@ -11,6 +12,6 @@ namespace Game1 {
 
 
         //abstract public void paint();
-        abstract public void paint( Game1 parent );
+        abstract public void paint( iGame parent );
     }
 }

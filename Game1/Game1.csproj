@@ -38,11 +38,12 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AbstractGuiComponent.cs" />
-    <Compile Include="Button.cs" />
+    <Compile Include="GUI\AbstractGuiComponent.cs" />
+    <Compile Include="GUI\Button.cs" />
+    <Compile Include="GUI\IGUIButton.cs" />
+    <Compile Include="GUI\Label.cs" />
+    <Compile Include="iGame.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="IGUIButton.cs" />
-    <Compile Include="Label.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +64,7 @@
     <None Include="Content\Pesca.spritefont" />
     <None Include="Content\Pesca.ttf" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
