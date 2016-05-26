@@ -5,5 +5,6 @@ namespace GUI {
     {
         void addListener(Action listener);
         void removeListener(Action listener);
+        void executeListeners();
     }
 }

@@ -25,5 +25,7 @@ namespace GUI {
         public override void paint( iGame parent ) {
             parent.spriteBatch.DrawString(font, text, new Vector2(x, y), Color.Black);
         }
+
+        public override void update( iGame parent ) { return; }
     }
 }

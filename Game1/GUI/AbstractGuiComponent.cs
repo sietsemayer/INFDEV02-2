@@ -13,5 +13,7 @@ namespace GUI {
 
         //abstract public void paint();
         abstract public void paint( iGame parent );
+        abstract public void update( iGame parent );
+
     }
 }

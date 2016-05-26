@@ -11,5 +11,8 @@ namespace Game1
     public interface iGame {
         SpriteBatch spriteBatch { get; }
         GraphicsDevice GraphicsDevice { get; }
+
+        Point getMousePoint();
+        MouseState getMouseState();
     }
 }

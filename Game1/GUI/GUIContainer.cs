@@ -14,5 +14,11 @@ namespace GUI {
                 item.paint(parent);
             }
         }
+
+        public override void update( iGame parent ) {
+            foreach( var item in components ) {
+                item.update(parent);
+            }
+        }
     }
 }

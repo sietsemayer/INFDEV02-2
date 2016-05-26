@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using GUI;
 using System;
+using System.Diagnostics;
 
 namespace Game1
 {
@@ -15,7 +16,6 @@ namespace Game1
         public SpriteBatch spriteBatch { protected set; get; }
 
         //public GraphicsDevice graphicsDevice { get; }
-
         List<AbstractGuiComponent> components = new List<AbstractGuiComponent>();
 
         public Game1() {
@@ -32,8 +32,10 @@ namespace Game1
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here            
+            // TODO: Add your initialization logic here  
+            this.IsMouseVisible = true;
             base.Initialize();
+            
         }
 
         /// <summary>
@@ -44,8 +46,10 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
-            components.Add(new Button(10, 10, 100, 25, "click me", Content.Load<SpriteFont>("Pesca")));
+
+            Button b = new Button(10, 10, 100, 25, "click me", Content.Load<SpriteFont>("Pesca"));
+            b.addListener(() => Debug.WriteLine("Mouse Clicked LAMBDA!!!;"));
+            components.Add(b);
             components.Add(new Label("test", Content.Load<SpriteFont>("Pesca"), 10, 60));
             components.Add(PanelFactory.generatePanel(Content));
             // TODO: use this.Content to load your game content here
@@ -71,6 +75,9 @@ namespace Game1
                 Exit();
 
             // TODO: Add your update logic here
+            foreach( AbstractGuiComponent obj in components ) {
+                obj.update(this);
+            }
 
             base.Update(gameTime);
         }
@@ -91,6 +98,14 @@ namespace Game1
             }
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public Point getMousePoint() {
+            return new Point(Mouse.GetState().X, Mouse.GetState().Y);
+        }
+
+        public MouseState getMouseState() {
+            return Mouse.GetState();
         }
     }
 }
